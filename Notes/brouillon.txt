@@ -1,0 +1,19 @@
+Q1.
+rrt
+	1e3 : Failures : 8 mean_length : 32.5854 mean iter to reach goal : 391.5     time : 6.37
+	2e3 : Failures : 3 mean_length : 39.4944 mean iter to reach goal : 1159.8571 time : 8.87
+	5e3 : Failures : 0 mean_length : 39.058 mean iter to reach goal : 1839.4     time : 16.84
+	1e4 : Failures : 0 mean_length : 40.9767 mean iter to reach goal : 1535.1    time : 31.30
+	2e4 : 
+rrt_star
+	1e3 : Failures : 7 mean_length : 38.4161 mean iter to reach goal : 857       time : 10.33
+	2e3 : Failures : 5 mean_length : 36.8058 mean iter to reach goal : 1155.4    time : 18.14
+	5e3 : Failures : 1 mean_length : 36.2421 mean iter to reach goal : 1712.8889 time : 72.11
+	1e4 : Failures : 0 mean_length : 28.0547 mean iter to reach goal : 1577.5    time : 204.55
+	2e4 : Failures : 0 mean_length : 26.1801 mean iter to reach goal : 1529
+rrt_star_fn
+	1e3 : Failures : 8 mean_length : 30.966 mean iter to reach goal : 654       time : 9.79
+	2e3 : Failures : 7 mean_length : 31.3685 mean iter to reach goal : 806.3333 time : 16.38
+	5e3 :Failures : 0 mean_length : 29.1065 mean iter to reach goal : 1576.7    time : 65.68
+	1e4 : Failures : 0 mean_length : 26.4056 mean iter to reach goal : 1620.9   time : 164.97
+	2e4 : Failures : 0 mean_length : 25.5149 mean iter to reach goal : 1087.9

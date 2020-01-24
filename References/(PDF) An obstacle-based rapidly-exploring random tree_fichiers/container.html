@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>SafeFrame Container</title>
+    <script>
+(function(){var n=this||self;var w={};var y=function(a){y[" "](a);return a};y[" "]=function(){};var B=null,G=function(a){var b=a.length,c=3*b/4;c%3?c=Math.floor(c):-1!="=.".indexOf(a[b-1])&&(c=-1!="=.".indexOf(a[b-2])?c-2:c-1);var d=new Uint8Array(c),f=0;C(a,function(g){d[f++]=g});return d.subarray(0,f)},C=function(a,b){function c(q){for(;d<a.length;){var e=a.charAt(d++),k=B[e];if(null!=k)return k;if(!/^[\s\xa0]*$/.test(e))throw Error("Unknown base64 encoding at char: "+e);}return q}H();for(var d=0;;){var f=c(-1),g=c(0),h=c(64),p=c(64);if(64===p&&-1===f)break;b(f<<2|g>>4);64!=h&&(b(g<<4&240|h>>2),64!=p&&b(h<<6&192|p))}},H=function(){if(!B){B={};for(var a="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),b=["+/=","+/","-_=","-_.","-_"],c=0;5>c;c++)for(var d=a.concat(b[c].split("")),f=0;f<d.length;f++){var g=d[f];void 0===B[g]&&(B[g]=f)}}};var I=function(a,b){if(a)for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(void 0,a[c],c,a)};var J=function(a,b){var c=void 0===c?{}:c;this.error=a;this.context=b.context;this.msg=b.message||"";this.id=b.id||"jserror";this.meta=c};var K=/^https?:\/\/(\w|-)+\.cdn\.ampproject\.(net|org)(\?|\/|$)/,L=function(a,b){this.a=a;this.b=b},M=function(a,b){this.url=a;this.g=!!b;this.depth=null};var N=function(a){n.google_image_requests||(n.google_image_requests=[]);var b=n.document.createElement("img");b.src=a;n.google_image_requests.push(b)};var O=function(){this.c="&";this.f=!1;this.b={};this.i=0;this.a=[]},Q=function(a,b){var c={};c[a]=b;return[c]},S=function(a,b,c,d,f){var g=[];I(a,function(h,p){(h=R(h,b,c,d,f))&&g.push(p+"="+h)});return g.join(b)},R=function(a,b,c,d,f){if(null==a)return"";b=b||"&";c=c||",$";"string"==typeof c&&(c=c.split(""));if(a instanceof Array){if(d=d||0,d<c.length){for(var g=[],h=0;h<a.length;h++)g.push(R(a[h],b,c,d+1,f));return g.join(c[d])}}else if("object"==typeof a)return f=f||0,2>f?encodeURIComponent(S(a,b,c,d,f+1)):"...";return encodeURIComponent(String(a))},T=function(a,b,c,d){a.a.push(b);a.b[b]=Q(c,d)},V=function(a){var b="https://pagead2.googlesyndication.com/pagead/gen_204?id=jserror&",c=U(a)-27;if(0>c)return"";a.a.sort(function(k,m){return k-m});for(var d=null,f="",g=0;g<a.a.length;g++)for(var h=a.a[g],p=a.b[h],q=0;q<p.length;q++){if(!c){d=null==d?h:d;break}var e=S(p[q],a.c,",$");if(e){e=f+e;if(c>=e.length){c-=e.length;b+=e;f=a.c;break}a.f&&(f=c,e[f-1]==a.c&&--f,b+=e.substr(0,f),f=a.c,c=0);d=null==d?h:d}}a="";null!=d&&(a=f+"trn="+d);return b+a+""},U=function(a){var b=1,c;for(c in a.b)b=c.length>b?c.length:b;return 3997-b-a.c.length-1};var W=function(a){if(.01>Math.random())try{if(a instanceof O)var b=a;else b=new O,I(a,function(d,f){var g=b,h=g.i++;d=Q(f,d);g.a.push(h);g.b[h]=d});var c=V(b);c&&N(c)}catch(d){}};var X=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(f){b=c}}return b};var Y=function(a){if(!a)return a;var b=a.toLowerCase();return-1<b.indexOf("<!doctype")||-1<b.indexOf("<html")?a:"<html><head></head><body>"+a+"</body></html>"},Z=function(a){var b=/<startguard>(.*)<endguard>/g.exec(a);return b&&b[1]?b[1]:a};var aa=new function(){this.a=w===w&&"https://ff.doubleclick.net"||""};var ba=/^([^;]+);(\d+);([\s\S]*)$/,ca=function(){var a=window.name,b=ba.exec(a);if(null===b)throw Error("Cannot parse serialized data. "+a.substring(0,50));a=+b[2];var c=b[3];if(a>c.length)throw Error("Parsed content size doesn't match. "+a+":"+c.length);return{j:b[1],content:c.substr(0,a),h:c.substr(a)}};var da=/(<head(\s+[^>]*)?>)/i;(function(a){if(window.name){var b=function(e){try{var k=new O;k.f=!0;T(k,1,"context",507);e.error&&e.meta&&e.id||(e=new J(e,{message:X(e)}));e.msg&&T(k,2,"msg",e.msg.substring(0,512));var m=[e.meta||{}];k.a.push(3);k.b[3]=m;e=n;m=[];var D=null;do{var l=e;try{var z;if(z=!!l&&null!=l.location.href)b:{try{y(l.foo);z=!0;break b}catch(A){}z=!1}var P=z}catch(A){P=!1}if(P){var t=l.location.href;D=l.document&&l.document.referrer||null}else t=D,D=null;m.push(new M(t||""));try{e=l.parent}catch(A){e=null}}while(e&&l!=e);t=0;for(var u=m.length-1;t<=u;++t)m[t].depth=u-t;l=n;if(l.location&&l.location.ancestorOrigins&&l.location.ancestorOrigins.length==m.length-1)for(u=1;u<m.length;++u){var v=m[u];v.url||(v.url=l.location.ancestorOrigins[u-1]||"",v.g=!0)}var E=new M(n.location.href,!1);l=null;var F=m.length-1;for(v=F;0<=v;--v){var r=m[v];!l&&K.test(r.url)&&(l=r);if(r.url&&!r.g){E=r;break}}r=null;var ea=m.length&&m[F].url;0!=E.depth&&ea&&(r=m[F]);var x=new L(E,r);x.b&&T(k,4,"top",x.b.url||"");T(k,5,"url",x.a.url||"");W(k)}catch(A){try{W({context:"ecmserr",rctx:507,msg:X(A),url:x&&x.a.url})}catch(fa){}}};try{var c=ca(),d=JSON.parse(c.h),f=function(e){d.goog_safeframe_hlt&&(n.goog_safeframe_hlt=d.goog_safeframe_hlt);d._context&&(n.AMP_CONTEXT_DATA=d._context);n.sf_={v:c.j,cfg:d};var k=window.document;k.open("text/html","replace");k.write(e);k.close();n.sf_&&(window.name="")},g=void 0===d.encryptionMode?null:d.encryptionMode,h=d.secureFetchFrame,p=d.uid;if(h){var q=new MessageChannel;q.port1.onmessage=function(e){e=Y(e.data).replace(da,'$1<script>window.addEventListener("load", function() {window.parent.postMessage("sf-load:'+(p+'", "*");});\x3c/script>'));a(e,g,f,b);q.port1.close()};window.parent.frames[h].postMessage("sf-ready:"+p,aa.a,[q.port2])}else window.name="",a(c.content,g,f,b)}catch(e){b(e)}}})(function(a,b,c){2===b&&(a=Y((new TextDecoder).decode(G(Z(a)))));c(a)});}).call(this);
+    </script><meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><script>var google_casm=[];</script><script></script><style>/* image styling */
+
+.ad-img-container {
+  overflow: hidden;
+  height: 160px;
+}
+
+.ad-img {
+  height: auto;
+  min-height: initial;
+  width: 100%;
+  max-height: 100%;
+}
+
+.ad-img-bg {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.ad-advertiser-img-container {
+  padding-right: 10px;
+  height:auto;
+  max-height: 45px;
+}
+
+.ad-advertiser-img {
+  height: auto;
+  min-height: initial;
+  max-height: 100%;
+  max-width: 50px;
+}
+
+
+/* ad styling */
+
+.ad-bd-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.ad-container {
+  position: relative;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #000;
+  font-size: 14px;
+  background: #fff;
+  word-wrap: break-word;
+}
+
+.ad-container:hover .ad-close {
+  visibility: visible;
+}
+
+.ad-container.ad-container-feed {
+  padding: 0 !important;
+  position: relative;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #000;
+  font-size: 14px;
+  background: #fff;
+}
+
+.ad-advertiser {
+  text-align: left;
+  vertical-align: middle;
+  border-spacing: 0;
+}
+
+.ad-advertiser-text {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.ad-advertiser-img-container {
+  margin-right: 5px;
+  height: 45px;
+  max-height: 45px;
+}
+
+.ad-cta {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  padding: 5px 7px;
+  line-height: 1.3;
+  border: 1px solid #0080ff;
+  background-color: #fff;
+  color: #0080ff;
+  font-size: 12px;
+  border-radius: 2px;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.ad-cta-feed {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2rem;
+  background-color: #fff;
+  color: #0080ff;
+  font-size: 13px;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.ad-ft {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.ad-close {
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  line-height: 20px;
+  width: 20px;
+  display: block;
+  font-size: 16px;
+  font-family: arial, sans-serif;
+  color: #999;
+  text-decoration: none;
+  text-align: center;
+  visibility: hidden;
+}
+
+.ad-img-container {
+  margin: 10px 0;
+}
+
+.ad-img-container-feed {
+  overflow: hidden;
+  margin: 0 0 10px;
+  height: 260px;
+}
+
+.ad-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 7px 0;
+  line-height: 18px;
+}
+
+.ad-description {
+  font-size: 12px;
+  font-weight: normal;
+  margin: 5px 0;
+}
+
+.ad-bd-link {
+  display: block;
+  position: relative;
+}
+
+.ad-wrapper {
+  background: #fff;
+}
+
+.ad-wrapper .ad-hd {
+  padding: 15px;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.ad-container-compact {
+  padding: 15px;
+  border-top: 1px solid #ccc;
+}
+
+.ad-container-compact .ad-advertiser-text {
+  font-size: 12px;
+}
+
+.ad-container-compact .ad-ft {
+ margin-top: 5px;
+}
+
+.ad-container-compact .ad-advertiser {
+  margin-top: 0;
+}
+
+body {
+  position: relative;
+}</style></head><body topmargin="0" marginwidth="0" marginheight="0" leftmargin="0"><script src="container_data/ext.js"></script><script>window.dicnf = {};</script><script data-jc="41">(function(){window.viewReq=[];window.vu=function(b){var a=new Image;a.src=b.replace("&amp;","&");viewReq.push(a)};}).call(this);</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjstj7d_yLQltH1NqWlUobxg_ZMu2X6amQbEmV0q-r8h-95K1zqiL-hEYy-y6aKAQU52kH2WUcK7Hm9VB7b6rvFcyOAzmYGqf5IAKlArjOLfQs_r33C8-3WBXyFPYI6QmSGFZYZG8c2ffaaen8Fto76ZsPN4FgHbdboqiQ49hREaHyYwrI4Olt8Of2aDEGmnTLG21aheGzz5SMFRMIx6sW1BzES7jG_EQKes3UBdmVIvnAzUyKHa402q8x5VQi9oWGn0GMm_VUK0DS6hOe-2UruiyskNj1BP1wLiYHMoZRQhzBCPerQzOdTmPaRZ0Cxj7keec13EFODKnnVGK\x26sai\x3dAMfl-YQtA839QiXJF52tqPFLlIdYzsTCyHlzwMxELh_5DmSmpUcfogth8pEFOZPj4CdUxCLdbF7G608NhQo5F5PTyznnzxANJO50ADmrQThW\x26sig\x3dCg0ArKJSzCkMgyg-9jf7EAE\x26urlfix\x3d1\x26adurl\x3d")</script><link href="container_data/css.css" rel="stylesheet" type="text/css"><div class="GoogleActiveViewElement" data-google-av-cxn="https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjsu1-Odm-3F7T4GysxuAeVOd1kcuuP1o6dO_7Hr8Cn48Pi_lrxJ3VGQAELjRmbA4dDp5aq49myZOXo935FmS3WCRgaXy0RGTjpJFt_5NXIg&amp;sig=Cg0ArKJSzAu7nIz_WMm9EAE" data-google-av-adk="3890970012" data-google-av-metadata="la=0&amp;alp=xai&amp;alh=1462620138&amp;xdi=0&amp;" data-google-av-override="-1" data-google-av-dm="2" data-google-av-immediate="" data-google-av-aid="0" data-google-av-naid="1" data-google-av-slift="" data-google-av-cpmav="" data-google-av-itpl="7" data-google-av-rs="4"><div class="ad-container" id="js-container">
+    <a class="ad-bd-link" id="js-ad-click" href="https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjssgP5cITCb3IBUUVud3X2zN1KrsOYmhBqzRdUWwN0AfBI68RKwhGeDAgqN14CM4Sr6_JOsO-1OSb8sAoA8PrIfwk6f95UzWDUxLZ9PcB-UTemxBfAVZCD3Rjlm1CJ9gz10MeEs3duz042ihXs58WkJbmaK4is9HaS0_6ukzO030UE7pc1voQoyMs9ghe3nzVGSFv2mKu_ocXx5Z6il4F2YwW4lW17xiDJ8lqpW7xZvJC240YHkNCqIDdiVdOLnZVw8hoks-UGgsnQE_KFlrRarOkS1-Go41iZRskiWWJYlGBO5_SNYH_Q%2526sai%253DAMfl-YTseAsSkzeaPYQhT8sg4NN0Y4ZKyMHU4mL1BNEaRhVHzU2Xe9GOOYNCyzJuLhutKL_7oHnTl10Oyry1VvcORfIh7BWB9urnTZ5AVUXE%2526sig%253DCg0ArKJSzDon_ye5JwM7EAE%2526urlfix%253D1%2526adurl%253Dhttps://angstromengineering.com/quantum-series-for-josephson-junctions/%3Futm_source%3Dresearchgate%26utm_campaign%3Dquantum_2019" target="_blank">
+      <div class="ad-bd">
+        <table class="ad-advertiser" width="100%">
+          <tbody><tr>
+            <td class="ad-advertiser-img-container" width="40px">
+                <img class="ad-advertiser-img" id="image" src="container_data/imgad">
+            </td>
+            <td>
+              <div class="ad-advertiser-text">
+                Angstrom Engineering Inc.
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+        <div class="ad-img-container">
+          <div class="ad-img-bg" style="background-image:url('https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDn3-DmjAEQARgBMgiVvP1fhwUOPA')"></div>
+        </div>
+      </div>
+      <div class="ad-title">
+        The trusted group in Qubit Fabrication Tech
+      </div>
+      <div class="ad-description">
+        Next Generation Josephson Junction Fabrication equipment used the world over.
+      </div>
+      <div class="ad-ft">
+        <div class="ad-cta">
+          Learn more
+        </div>
+      </div>
+    </a>
+    <a href="javascript:" class="ad-close" id="js-ad-close">×</a>
+  </div>
+
+<script>
+var domain = 'https://www.researchgate.net';
+var snippetId = 'f7y4ds3b0sk';
+var dmpImpressionPixelUrl='';
+var dmpClickPixelUrl='';
+var audienceSegmentIdsString = '';
+var previewMode = 'false';
+
+function getRandomNumber() {
+   var axel = Math.random() + '';
+   return axel * 10000000000000;
+}
+
+function addClickTrackImage() {
+    var interactionGoals = '';
+    var managerVersion = '1.28.0';
+    var contentKey = 'PB:4246439';
+    var adCorrelationId = '9d36619c-db27-478d-ac21-6a59eb57c01d';
+    var imgSrc = domain + '/delivery/click.gif?adUnit=/83500759/LoggedOut_PublicationWithFulltext_Right&rnd=' + getRandomNumber() + '&li=5208091150&ai=4786627170&ci=138292304402&si=123763';
+    if (managerVersion) {
+        imgSrc += '&mv=' + managerVersion;
+    }
+    if (contentKey) {
+        imgSrc += '&ck=' + contentKey;
+    }
+    if (adCorrelationId) {
+        imgSrc += '&aci=' + adCorrelationId;
+    }
+    if (interactionGoals) {
+        imgSrc += '&' + interactionGoals.split(',').map(function(interactionGoal) { return '_sg[]=' + interactionGoal; }).join('&');
+    }
+    addTrackingPixel(imgSrc);
+}
+
+function addTrackingPixel(trackingPixelUrl) {
+    var audiencePixel = document.createElement('img');
+    audiencePixel.src = trackingPixelUrl;
+    audiencePixel.width = 1;
+    audiencePixel.height = 1;
+    audiencePixel.border = 0;
+    audiencePixel.setAttribute("style", "position: absolute; top: -1px; left: -1px; " + "width:0; height:0; visibility:hidden;");
+    document.body.appendChild(audiencePixel);
+}
+
+function attachEvent(el, eventName, callback) {
+    if (el.addEventListener) {
+        el.addEventListener(eventName, callback);
+    } else if (el.attachEvent)  {
+        el.attachEvent(eventName, callback);
+    }
+}
+
+function postMessageRg(message) {
+    if (window.postMessage) {
+              if (typeof message === 'object') {
+            if (JSON && JSON.stringify) {
+                try {
+                    message = JSON.stringify(message);
+                } catch(e) {}
+            }
+        }
+        window.top.postMessage(message, domain);
+    } else {
+        return false;
+    }
+}
+
+function init() {
+    // set up click handlers
+    attachEvent(document.getElementById('js-ad-click'), 'click', handleClickAd);
+    attachEvent(document.getElementById('js-ad-close'), 'click', handleClickClose);
+
+    // track view 
+    postMessageRg({"msg":"CreativeId","creative":"138292304402","adunit":"/83500759/LoggedOut_PublicationWithFulltext_Right","snippet":snippetId});
+    
+    if ("true" === 'true') {
+        postMessageRg({"msg":"disableRefresh","creative":"138292304402","adunit":"/83500759/LoggedOut_PublicationWithFulltext_Right","snippet":snippetId});
+    }
+}
+
+// handle click on X
+function handleClickClose() {
+    postMessageRg({"msg":"blacklistCreativeId","creative":"138292304402","adunit":"/83500759/LoggedOut_PublicationWithFulltext_Right","snippet":snippetId});
+}
+
+// track click on RG
+function trackClickRg() {
+   addClickTrackImage(); postMessageRg({"msg":"adInteract","creative":"138292304402","adunit":"/83500759/LoggedOut_PublicationWithFulltext_Right","snippet":snippetId});
+}
+
+function trackClickDmp() {
+    if (dmpClickPixelUrl) {
+    	addTrackingPixel(dmpClickPixelUrl);
+    }
+}
+
+// handleClick
+function handleClickAd(e) {
+    var axel = Math.random() + '';
+    var a = axel * 10000000000000;
+
+    if (audienceSegmentIdsString) {
+        var audienceSegmentIds = audienceSegmentIdsString.split(",");
+        var audienceSegmentIdLength = audienceSegmentIds.length;
+        for (var i = 0; i < audienceSegmentIdLength; i++) {
+            var audienceSegmentId = audienceSegmentIds[i];
+            if (isNaN(audienceSegmentId)) {
+                continue;
+            }
+            addTrackingPixel('https://pubads.g.doubleclick.net/activity;dc_iu=/83500759/DFPAudiencePixel;ord=' + a + ';dc_seg=' + audienceSegmentId + '?');
+        }
+    }
+    trackClickRg();
+    trackClickDmp();
+}
+
+init();
+
+
+if (dmpImpressionPixelUrl) {
+    addTrackingPixel(dmpImpressionPixelUrl);
+}
+</script>
+</div><script src="container_data/osd_listener.js"></script><script type="text/javascript">osdlfm(-1,'','BiS7KVBITXoGXOO-MmLAPsbC98AUAAAAAEAE4AcgBCcACAuACAOAEAaAGH9IIBwiA4YAQEAE','',3890970012,true,'la\x3d0\x26alp\x3dxai\x26alh\x3d1462620138\x26xdi\x3d0\x26',3,'CAASBORoecQ','https://pagead2.googlesyndication.com/pcs/activeview?xai\x3dAKAOjsu1-Odm-3F7T4GysxuAeVOd1kcuuP1o6dO_7Hr8Cn48Pi_lrxJ3VGQAELjRmbA4dDp5aq49myZOXo935FmS3WCRgaXy0RGTjpJFt_5NXIg\x26sig\x3dCg0ArKJSzAu7nIz_WMm9EAE','');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"key_value":[{"key":"qid","value":"CIGR4ZPo7uYCFW8GBgAdMVgPXg"}],"googMsgType":"adpnt"}','*');}</script><div style="bottom:0;right:0;width:100px;height:100px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:-moz-crisp-edges !important;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB+SURBVBjTbZABDsAwCALxB/z/tYui6Ja1yVozsIfA/wqtut2K9Ze5uVWkArFnfUvH1Eo+1VF91BjP7R3WjadIZtFOcSOaWSnQ4gVmbzicrtW9q1HzJIBhq7nGcmfGRpbhzT1km0u9h2qnEA55J7g4d96dwG/sBGUQkUn8QpoeZVIF5E8J1VMAAAAASUVORK5CYII=') !important;"></div><script>
+if (document.attachEvent) {
+   document.attachEvent('onclick', trackAudienceClick);
+  } else {
+   document.addEventListener('click', trackAudienceClick);
+}
+
+function trackAudienceClick(){
+var axel = Math.random() + '';
+var a = axel * 10000000000000;
+var ap = document.createElement('img');
+ap.src = "https://pubads.g.doubleclick.net/activity;dc_iu=/83500759/DFPAudiencePixel;ord=" + a + ";dc_seg=417041557?";
+ap.width = 1;
+ap.height = 1;
+ap.border = 0;
+document.body.appendChild(ap);
+
+if (document.detachEvent) {
+   document.detachEvent('onclick', trackAudienceClick);
+  } else {
+   document.removeEventListener('click', trackAudienceClick);
+}
+
+}
+
+</script>
+  
+  
+  
+
+</body></html>
